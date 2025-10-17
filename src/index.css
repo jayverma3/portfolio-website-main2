@@ -1,0 +1,101 @@
+/* CSS Variables */
+:root {
+  /* Colors */
+  --primary-color: #0a2e36;
+  --primary-color-light: #1f4e59;
+  --secondary-color: #f2b705;
+  --background-color: #000000ff;
+  --text-color: #343a40;
+  --white: #ffffff;
+  --border-color: #fefeffff;
+
+  /* Fonts */
+  --font-primary: "Fraunces", serif;
+  --font-secondary: "Merriweather Sans", sans-serif;
+
+  /* Font Sizes */
+  --text-base: 16px;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --border-radius: 8px;
+}
+
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  font-size: var(--text-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+/* Hide scrollbar for Webkit-based browsers (Chrome, Safari, etc.) */
+body::-webkit-scrollbar {
+  display: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

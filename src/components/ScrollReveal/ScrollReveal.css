@@ -1,0 +1,25 @@
+.scroll-reveal {
+  margin: 40px 0;
+  perspective: 1200px;
+}
+
+.scroll-reveal-text {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 4.5rem);
+  line-height: 1.2;
+  font-weight: 800;
+  color: #e5e7eb;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.word-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.1em;
+}
+
+.word {
+  display: inline-block;
+  transform-origin: top center;
+}
