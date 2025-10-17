@@ -11,7 +11,7 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio-website-main2/">
       <Header />
       <main>
         <Routes>

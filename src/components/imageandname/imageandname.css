@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Boldonse&family=Cinzel:wght@400..900&family=Nabla&family=Outfit&family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Boldonse&family=Bruno+Ace+SC&family=Cinzel:wght@400..900&family=Goblin+One&family=Lexend+Deca:wght@100..900&family=Metal+Mania&family=Nabla:EDPT@104&family=Outfit&family=Quintessential&family=Righteous&family=Unbounded:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /* Container */
 .image-and-name-container {
   display: flex;
@@ -70,7 +71,7 @@
 
 /* 💬 Welcome text fade in */
 .iandnclass {
-  font-family: "Nabla", system-ui;
+  font-family: "Philosopher", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

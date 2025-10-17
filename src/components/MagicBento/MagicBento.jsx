@@ -7,49 +7,50 @@ const DEFAULT_SPOTLIGHT_RADIUS = 300;
 const DEFAULT_GLOW_COLOR = "132, 0, 255";
 const MOBILE_BREAKPOINT = 768;
 
-import image1 from "../../assets/pexels-atbo-66986-245219.jpg";
-import image2 from "../../assets/pexels-curtis-adams-1694007-3935350.jpg";
-import image3 from "../../assets/pexels-falling4utah-2724748.jpg";
-import image4 from "../../assets/pexels-falling4utah-2724749.jpg";
-import image5 from "../../assets/pexels-fotoaibe-1643384.jpg";
-import image6 from "../../assets/pexels-heyho-7061393.jpg";
+import image1 from "../../assets/pexels-adrien-olichon-1257089-2387793.jpg";
+import image2 from "../../assets/pexels-iriser-1122639.jpg";
+import image3 from "../../assets/pexels-trushotz-2012836-3635300.jpg";
+import image4 from "../../assets/pexels-francesco-ungaro-998641.jpg";
+import image5 from "../../assets/pexels-pixabay-35016.jpg";
+import image6 from "../../assets/pexels-pixabay-290470.jpg";
 
 const cardData = [
   {
     image: image1,
-    title: "Modern Living Room",
-    description: "A beautifully designed modern living room.",
-    label: "Interior",
+    title: "Art",
+    description: "Creating Websites with incredible precision.",
+    label: "Website Development",
   },
   {
     image: image2,
-    title: "Cozy Bedroom",
-    description: "A cozy bedroom with a minimalist design.",
-    label: "Interior",
+    title: "Asthetic's",
+    description: "UI/UX designs with incredible animation.",
+    label: "UI/UX",
   },
   {
     image: image3,
-    title: "Sleek Kitchen",
-    description: "A sleek and modern kitchen with top-of-the-line appliances.",
-    label: "Interior",
-  },
-  {
-    image: image4,
-    title: "Elegant Dining Area",
-    description: "An elegant dining area perfect for entertaining guests.",
-    label: "Interior",
-  },
-  {
-    image: image5,
     title: "Stylish Bathroom",
     description: "A stylish bathroom with a contemporary design.",
     label: "Interior",
   },
   {
+    image: image4,
+    title: "Alchemy",
+    description: "Coding everyrthing from scratch to perfection.",
+    label: "Coding",
+  },
+  {
+    image: image5,
+    title: "Automation",
+    description: "Using Ai in the manner it was intended.",
+    label: "AI",
+  },
+  {
     image: image6,
-    title: "Relaxing Patio",
-    description: "An outdoor patio designed for relaxation and comfort.",
-    label: "Exterior",
+    title: "Creation",
+    description:
+      "Blending 3D design with interactive storytelling—spaces that users can feel, not just see.",
+    label: "3D",
   },
 ];
 

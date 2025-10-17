@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Tapestry&display=swap");
 .variable-proximity {
-  font-family: "Roboto Flex", sans-serif;
+  font-family: "Tapestry", sans-serif;
 }
 
 .sr-only {

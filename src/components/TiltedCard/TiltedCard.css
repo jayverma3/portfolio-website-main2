@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   justify-content: center;
 }
 
@@ -14,6 +15,7 @@
   top: 1rem;
   text-align: center;
   font-size: 0.875rem;
+
   display: none;
 }
 
@@ -35,12 +37,18 @@
   position: absolute;
   top: 0;
   left: 0;
-  object-fit: cover;
+  object-fit: fill;
+
   border-radius: 15px;
   will-change: transform;
   transform: translateZ(0);
 }
-
+.tilted-card-demo-text {
+  color: #fff;
+  font-size: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 .tilted-card-overlay {
   position: absolute;
   top: 0;
