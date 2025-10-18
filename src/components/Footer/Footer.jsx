@@ -1,43 +1,107 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaTwitter,
+  FaInstagram,
+  FaPaperPlane,
+  FaCode,
+} from "react-icons/fa";
 import "./Footer.css";
 
 const Footer = () => {
+  const socialLinks = [
+    {
+      icon: <FaGithub />,
+      url: "https://github.com/jayverma3",
+      label: "Github",
+    },
+    {
+      icon: <FaLinkedinIn />,
+      url: "https://linkedin.com",
+      label: "LinkedIn",
+    },
+    { icon: <FaTwitter />, url: "https://twitter.com", label: "Twitter" },
+    {
+      icon: <FaInstagram />,
+      url: "https://instagram.com",
+      label: "Instagram",
+    },
+  ];
+
+  const navLinks = [
+    { path: "/", label: "Home" },
+
+    { path: "/contact", label: "Contact" },
+  ];
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    // Handle newsletter submission logic
+    alert("Thank you for subscribing!");
+  };
+
   return (
-    <footer className="footer">
+    <footer className="footer-reimagined">
       <div className="footer-container">
-        <div className="footer-main">
-          <div className="footer-column about">
-            <h3 className="footer-logo">Vinshek</h3>
+        <div className="footer-top">
+          <div className="footer-section about">
+            <h3 className="footer-logo">
+              <FaCode /> Jay V.
+            </h3>
             <p>
-              Crafting immersive digital experiences that blend creativity with
-              cutting-edge technology.
+              A passionate developer creating immersive and beautiful web
+              experiences. Crafting digital solutions with a focus on user
+              experience and performance.
             </p>
           </div>
-          <div className="footer-column links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/products">Products</Link></li>
-              <li><Link to="/reviews">Reviews</Link></li>
-              <li><Link to="/gallery">Gallery</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+          <div className="footer-section links">
+            <h4 className="footer-heading">Explore</h4>
+            <ul className="footer-links">
+              {navLinks.map((link) => (
+                <li key={link.path}>
+                  <Link to={link.path}>{link.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
-          <div className="footer-column social">
-            <h4>Follow Us</h4>
-            <div className="social-icons">
-              <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-              <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-              <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
-            </div>
+          <div className="footer-section newsletter">
+            <h4 className="footer-heading">Stay Updated</h4>
+            <p>Subscribe to our newsletter for the latest updates.</p>
+            <form
+              className="footer-newsletter-form"
+              onSubmit={handleNewsletterSubmit}
+            >
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="footer-newsletter-input"
+                required
+              />
+              <button type="submit" className="footer-newsletter-button">
+                <FaPaperPlane />
+              </button>
+            </form>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Vinshek. All Rights Reserved.</p>
+          <p className="footer-copyright">
+            &copy; {new Date().getFullYear()} Jay V. All rights reserved.
+          </p>
+          <div className="footer-social-icons">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.url}
+                aria-label={link.label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

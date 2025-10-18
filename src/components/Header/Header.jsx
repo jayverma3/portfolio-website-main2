@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/dragon.png";
-
+import GooeyNav from "../GooeyNav/GooeyNav";
 import "./Header.css";
 
 const Header = () => {
@@ -30,6 +30,18 @@ const Header = () => {
 
   return (
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
+      <div style={{ position: "relative" }}>
+        {/*<GooeyNav
+          items={items}
+          particleCount={15}
+          particleDistances={[90, 10]}
+          particleR={100}
+          initialActiveIndex={0}
+          animationTime={600}
+          timeVariance={300}
+          colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+        />*/}
+      </div>
       <div className="header-container">
         <div className="logo">
           <a href="#home" className="logo-link-v2">

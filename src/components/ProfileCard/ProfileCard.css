@@ -1,4 +1,4 @@
-:root {
+.pixelcardroot {
   --pointer-x: 50%;
   --pointer-y: 50%;
   --pointer-from-center: 0;
@@ -26,6 +26,8 @@
   --sunpillar-clr-5: var(--sunpillar-5);
   --sunpillar-clr-6: var(--sunpillar-6);
   --card-radius: 30px;
+  padding-top: 120px;
+  padding-bottom: 100px;
 }
 
 .pc-card-wrapper {
@@ -114,7 +116,7 @@
   inset: 1px;
   position: absolute;
   background-image: var(--inner-gradient);
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0);
   transform: translate3d(0, 0, 0.01px);
 }
 

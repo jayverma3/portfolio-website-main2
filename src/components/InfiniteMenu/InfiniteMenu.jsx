@@ -688,7 +688,7 @@ class InfiniteGridMenu {
   #init(onInit) {
     this.gl = this.canvas.getContext("webgl2", {
       antialias: true,
-      alpha: true,
+      alpha: false,
     });
     const gl = this.gl;
     if (!gl) {
@@ -761,7 +761,7 @@ class InfiniteGridMenu {
     );
 
     this.icoGeo = new IcosahedronGeometry();
-    this.icoGeo.subdivide(2).spherize(this.SPHERE_RADIUS);
+    this.icoGeo.subdivide(1).spherize(this.SPHERE_RADIUS);
     this.instancePositions = this.icoGeo.vertices.map((v) => v.position);
     this.DISC_INSTANCE_COUNT = this.icoGeo.vertices.length;
     this.#initDiscInstances(this.DISC_INSTANCE_COUNT);
@@ -878,7 +878,7 @@ class InfiniteGridMenu {
     let positions = this.instancePositions.map((p) =>
       vec3.transformQuat(vec3.create(), p, this.control.orientation)
     );
-    const scale = 0.15;
+    const scale = 0.25;
     const SCALE_INTENSITY = 0.6;
     positions.forEach((p, ndx) => {
       const s =

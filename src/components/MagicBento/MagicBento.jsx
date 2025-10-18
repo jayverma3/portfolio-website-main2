@@ -29,9 +29,9 @@ const cardData = [
   },
   {
     image: image3,
-    title: "Stylish Bathroom",
-    description: "A stylish bathroom with a contemporary design.",
-    label: "Interior",
+    title: "Unique",
+    description: "Transforming patterns into reality.",
+    label: "Patterns",
   },
   {
     image: image4,
