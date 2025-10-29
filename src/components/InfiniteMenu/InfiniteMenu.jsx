@@ -1079,7 +1079,7 @@ const defaultItems = [
   },
 ];
 
-export default function InfiniteMenu({ items = [] }) {
+export default function InfiniteMenu({ items = [], onArrowClick }) {
   const canvasRef = useRef(null);
   const [activeItem, setActiveItem] = useState(null);
   const [isMoving, setIsMoving] = useState(false);
@@ -1118,11 +1118,14 @@ export default function InfiniteMenu({ items = [] }) {
   }, [items]);
 
   const handleButtonClick = () => {
-    if (!activeItem?.link) return;
-    if (activeItem.link.startsWith("http")) {
-      window.open(activeItem.link, "_blank");
-    } else {
-      console.log("Internal route:", activeItem.link);
+    if (onArrowClick) {
+      onArrowClick();
+    } else if (activeItem?.link) {
+      if (activeItem.link.startsWith("http")) {
+        window.open(activeItem.link, "_blank");
+      } else {
+        console.log("Internal route:", activeItem.link);
+      }
     }
   };
 

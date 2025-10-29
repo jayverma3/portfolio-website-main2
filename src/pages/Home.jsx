@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import picRound from "../assets/me_images/IMG_20250123_231859_836.webp";
 import WorkTable from "../components/WorkTable/WorkTable";
 import whiteline from "../assets/whiteblock.png";
@@ -86,6 +86,12 @@ import netexec from "../assets/logos_pngs/tool-logo-netexec.png";
 import powershellempire from "../assets/logos_pngs/tool-logo-powershell-empire.png";
 
 const Home = () => {
+  const [isWorkTableVisible, setIsWorkTableVisible] = useState(false);
+
+  const toggleWorkTable = () => {
+    setIsWorkTableVisible(!isWorkTableVisible);
+  };
+
   const fullStackMeteorImages = [
     css3,
     html5,
@@ -371,8 +377,8 @@ const Home = () => {
             width: "150%",
           }}
         >
-          <InfiniteMenu items={items} />
-          <WorkTable />
+          <InfiniteMenu items={items} onArrowClick={toggleWorkTable} />
+          {isWorkTableVisible && <WorkTable onClose={toggleWorkTable} />}
         </div>
         <div style={{ paddingTop: "100px", paddingBottom: "100px" }}>
           {/*<TiltedCard

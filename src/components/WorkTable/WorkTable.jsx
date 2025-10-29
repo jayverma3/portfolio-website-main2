@@ -13,7 +13,7 @@ const ICONS = {
   "personal-icon.svg": PersonalIcon,
 };
 
-const WorkTable = () => {
+const WorkTable = ({ onClose }) => {
   const [activeCategory, setActiveCategory] = useState(workData[0].category);
   const [activeSubcategory, setActiveSubcategory] = useState(workData[0].subcategories[0]);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -46,8 +46,9 @@ const WorkTable = () => {
   }
 
   return (
-    <div className="work-table-container">
+    <div className="work-table-container hover">
       <div className="work-table">
+        <button className="close-btn" onClick={onClose}>×</button>
         <div className="left-panel">
           <ul>
             {workData.map((category) => (
