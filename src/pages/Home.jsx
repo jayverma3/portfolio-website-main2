@@ -12,6 +12,12 @@ import GlassSurface from "../components/GlassSurface/GlassSurface";
 import InfiniteMenu from "../components/InfiniteMenu/InfiniteMenu";
 import Ballpit from "../components/Ballpit/Ballpit";
 import Cubes from "../components/Cubes/Cubes";
+import supermanimg from "../assets/New folder/Logo Wallpaper Collection Superman.jpg";
+import batmanimg from "../assets/New folder/Batman Wallpaper iPhone HD Wallpap.jpg";
+import batmanimg2 from "../assets/New folder/Description Batman Logo Wallpaper Is A Hi Res For Pc.jpg";
+import githublogo from "../assets/logos_pngs/github.png";
+import visualstudiocodelogo from "../assets/logos_pngs/vscode.png";
+import vscode from "../assets/logos_pngs/visualcode.jpeg";
 import Masonry from "../components/Masonry/Masonry";
 import logo1 from "../assets/logos/brandlogo.avif";
 import StarBorder from "../components/StarBorder/StarBorder";
@@ -110,25 +116,25 @@ const Home = () => {
   ];
   const items = [
     {
-      image: "https://picsum.photos/300/300?grayscale",
+      image: supermanimg,
       link: "https://google.com/",
       title: "Websites",
       description: "This is pretty cool, right?",
     },
     {
-      image: "https://picsum.photos/400/400?grayscale",
+      image: batmanimg2,
       link: "https://google.com/",
       title: "Bug Bounty",
       description: "This is pretty cool, right?",
     },
     {
-      image: "https://picsum.photos/500/500?grayscale",
+      image: githublogo,
       link: "https://google.com/",
       title: "YouTube",
       description: "This is pretty cool, right?",
     },
     {
-      image: "https://picsum.photos/600/600?grayscale",
+      image: vscode,
       link: "https://google.com/",
       title: "All Projects",
       description: "This is pretty cool, right?",
