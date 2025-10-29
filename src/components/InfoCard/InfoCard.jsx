@@ -21,17 +21,23 @@ const InfoCard = ({
   });
 
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const onMouseMove = (e) => {
     const { clientX, clientY, currentTarget } = e;
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
     const x = (clientX - left) / width - 0.5;
     const y = (clientY - top) / height - 0.5;
-    setRotate({ x: -y * 15, y: x * 15 });
+    setRotate({ x: -y * 10, y: x * 10 }); // Reduced rotation for subtlety
+
+    const mouseX = clientX - left;
+    const mouseY = clientY - top;
+    setMousePosition({ x: mouseX, y: mouseY });
   };
 
   const onMouseLeave = () => {
     setRotate({ x: 0, y: 0 });
+    setMousePosition({ x: -100, y: -100 }); // Move spotlight off-card
   };
 
   useEffect(() => {
@@ -42,51 +48,49 @@ const InfoCard = ({
   }, [controls, inView]);
 
   useEffect(() => {
-    if (!startAnimation) return;
+    if (!startAnimation || !containerRef.current) return;
 
     const container = containerRef.current;
 
     const createMeteor = () => {
+      if (!container) return;
       const meteor = document.createElement("img");
       meteor.src =
         meteorImages[Math.floor(Math.random() * meteorImages.length)];
       meteor.className = "meteor";
-
-      const size = Math.random() * 50 + 60;
+      const size = Math.random() * 40 + 50;
       meteor.style.width = `${size}px`;
-
-      const x = Math.random() * container.offsetWidth;
-      meteor.style.left = `${x}px`;
-
-      const drift = Math.random() > 0.5 ? 40 : -40;
-      meteor.style.setProperty("--drift", `${drift}px`);
-
-      const duration = Math.random() * 5 + 5;
-      meteor.style.animationDuration = `${duration}s`;
-
+      meteor.style.left = `${Math.random() * 100}%`;
+      meteor.style.setProperty("--drift", `${Math.random() * 40 - 20}px`);
+      meteor.style.animationDuration = `${Math.random() * 4 + 4}s`;
       container.appendChild(meteor);
-
-      setTimeout(() => {
-        if (container.contains(meteor)) {
-          container.removeChild(meteor);
-        }
-      }, duration * 1000 + 1000);
+      setTimeout(() => meteor.remove(), 8000);
     };
 
-    const interval = setInterval(createMeteor, 400);
+    const interval = setInterval(createMeteor, 500);
     return () => clearInterval(interval);
   }, [startAnimation, meteorImages]);
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    hidden: { opacity: 0, scale: 0.95 },
     visible: {
       opacity: 1,
-      y: 0,
       scale: 1,
       transition: {
         duration: 0.8,
         ease: "easeOut",
+        when: "beforeChildren",
+        staggerChildren: 0.1,
       },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -101,33 +105,54 @@ const InfoCard = ({
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         style={{
-          transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale3d(1, 1, 1)`,
+          "--mouse-x": `${mousePosition.x}px`,
+          "--mouse-y": `${mousePosition.y}px`,
+          transform: `perspective(1500px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale3d(1, 1, 1)`,
           transition: "transform 0.2s ease-out",
         }}
       >
-        <img src={image} alt="Profile" className="ic-image" />
-        {title && <h1 className="ic-h1">{title}</h1>}
-        <div className="ic-divider"></div>
-        {intro && <p className="ic-p">{intro}</p>}
+        <motion.img
+          src={image}
+          alt="Profile"
+          className="ic-image"
+          variants={itemVariants}
+        />
+        {title && (
+          <motion.h1 className="ic-h1" variants={itemVariants}>
+            {title}
+          </motion.h1>
+        )}
+        <motion.div className="ic-divider" variants={itemVariants}></motion.div>
+        {intro && (
+          <motion.p className="ic-p" variants={itemVariants}>
+            {intro}
+          </motion.p>
+        )}
 
         {sections.map((section, index) => (
-          <div key={index}>
+          <motion.div key={index} variants={itemVariants} className="ic-section">
             <div className="ic-divider"></div>
             <p className="ic-p">
               <strong>{section.title}</strong>
             </p>
-            <ul className="ic-ul">
+            <motion.ul className="ic-ul">
               {section.items.map((item, itemIndex) => (
-                <li key={itemIndex} className="ic-li">
+                <motion.li
+                  key={itemIndex}
+                  className="ic-li"
+                  variants={itemVariants}
+                >
                   <P /> {item}
-                </li>
+                </motion.li>
               ))}
-            </ul>
-          </div>
+            </motion.ul>
+          </motion.div>
         ))}
 
-        <div className="ic-divider"></div>
-        <p className="ic-p">{concludingText}</p>
+        <motion.div className="ic-divider" variants={itemVariants}></motion.div>
+        <motion.p className="ic-p" variants={itemVariants}>
+          {concludingText}
+        </motion.p>
       </motion.div>
     </div>
   );

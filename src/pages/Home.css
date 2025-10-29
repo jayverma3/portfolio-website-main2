@@ -12,7 +12,7 @@
 /* Main content container */
 .home-container {
   width: 100%;
-  padding: 0 var(--spacing-lg);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,12 +66,14 @@
   transform: translateY(-5px);
   box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
 }
-
+.divstyle {
+  gap: 200px;
+}
 /* Features Section */
 .features-section {
   width: 100%;
   max-width: 1200px;
-  padding: 10vh 0;
+  padding-bottom: 400px;
   text-align: center;
 }
 
@@ -123,6 +125,7 @@
   font-size: 3rem;
 }
 /* Responsive Design */
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 3rem;
@@ -135,5 +138,59 @@
   }
   .card-swap-container {
     max-width: 90%;
+  }
+}
+
+/* Responsive Hero Section */
+.hero-section .my-custom-class {
+  width: 90%;
+  max-width: 1000px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.round-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.white-line {
+  height: 150px;
+  width: 5px;
+  margin: 0 2rem;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 1rem; /* Add some padding on mobile */
+    min-height: auto;
+  }
+
+  .hero-section .my-custom-class {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .round-image {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 1rem;
+  }
+
+  .white-line {
+    display: none; /* Hide the divider on mobile */
+  }
+
+  /* Adjust TrueFocus font size if it has a container */
+  .hero-section .true-focus-container {
+    font-size: 2rem; /* Example adjustment */
   }
 }

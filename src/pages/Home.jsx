@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import picRound from "../assets/picround.png";
-
+import picRound from "../assets/me_images/IMG_20250123_231859_836.webp";
+import WorkTable from "../components/WorkTable/WorkTable";
 import whiteline from "../assets/whiteblock.png";
 import Threads from "../components/Backgrounds/Threads/Threads";
 import CardSwap, { Card } from "../components/CardSwap/CardSwap";
@@ -32,6 +32,7 @@ import ImageAndName from "../components/imageandname/imageandname";
 import SplitText from "../components/SplitText/SplitText";
 import ShapeBlur from "../components/ShapeBlur/ShapeBlur";
 import InfoCard from "../components/InfoCard/InfoCard";
+import Carousel from "../components/Carousel/Carousel";
 
 import "./Home.css";
 
@@ -50,7 +51,7 @@ import image11 from "../assets/pexels-saviesa-home-1098995-2089698.jpg";
 import imgformainpage from "../assets/me_images/IMG_20250118_135530_996.jpg";
 import imgformainpage2 from "../assets/me_images/Snapchat-1654963961.jpg";
 import imgformainpage3 from "../assets/me_images/40EC4284-EA51-48C3-8C18-DA3B04F05A24.jpg";
-import imgformainpage4 from "../assets/me_images/photo_15_2023-02-14_12-41-15.jpg";
+import imgformainpage4 from "../assets/me_images/IMG_8370.png";
 // Full Stack Meteor Images
 import css3 from "../assets/logos_pngs/css3.png";
 import html5 from "../assets/logos_pngs/html.png";
@@ -111,31 +112,32 @@ const Home = () => {
     {
       image: "https://picsum.photos/300/300?grayscale",
       link: "https://google.com/",
-      title: "Item 1",
+      title: "Websites",
       description: "This is pretty cool, right?",
     },
     {
       image: "https://picsum.photos/400/400?grayscale",
       link: "https://google.com/",
-      title: "Item 2",
+      title: "Bug Bounty",
       description: "This is pretty cool, right?",
     },
     {
       image: "https://picsum.photos/500/500?grayscale",
       link: "https://google.com/",
-      title: "Item 3",
+      title: "YouTube",
       description: "This is pretty cool, right?",
     },
     {
       image: "https://picsum.photos/600/600?grayscale",
       link: "https://google.com/",
-      title: "Item 4",
+      title: "All Projects",
       description: "This is pretty cool, right?",
     },
   ];
 
   const fullStackData = {
     image: picRound,
+    title: "Full Stack Dev",
     intro:
       "I'm a full stack developer with a passion for building efficient, scalable, and user-centric digital products. With experience spanning both front-end and back-end technologies, I specialize in turning ideas into responsive, high-performing web applications.",
     sections: [
@@ -254,7 +256,6 @@ const Home = () => {
           </GlassSurface>
         </div>
         {/*<SplashCursor />*/}
-
         <div style={{ height: "600px", position: "relative", width: "100%" }}>
           <Cubes
             gridSize={15}
@@ -297,10 +298,6 @@ const Home = () => {
             rippleOnClick={true}
           />
         </div>
-        <div className="info-cards-container">
-          <InfoCard {...fullStackData} />
-          <InfoCard {...bugBountyData} />
-        </div>
         <div className="features-section">
           <MagicBento
             textAutoHide={true}
@@ -315,16 +312,11 @@ const Home = () => {
             glowColor="132, 0, 255"
           />
         </div>
-        <div className="side-by-side">
-          <div
-            className="inner-side-by-side"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "50px",
-            }}
-          >
+        <Carousel>
+          <div className="carousel-item">
+            <InfoCard {...fullStackData} />
+          </div>
+          <div className="profilestyle">
             <ProfileCard
               name="Jay A. Verma"
               title="Full Stack Developer"
@@ -337,23 +329,44 @@ const Home = () => {
               enableMobileTilt={false}
               onContactClick={() => console.log("Contact clicked")}
             />
+            <ProfileCard
+              name="Jeremy Dsanta"
+              title="Bug Bounty Hunter"
+              handle="dsanta"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl={imgformainpage4}
+              showUserInfo={true}
+              enableTilt={true}
+              enableMobileTilt={false}
+              onContactClick={() => console.log("Contact clicked")}
+            />
           </div>
-
-          <ProfileCard
-            name="Jeremy Dsanta"
-            title="Bug Bounty Hunter"
-            handle="dsanta"
-            status="Online"
-            contactText="Contact Me"
-            avatarUrl={imgformainpage4}
-            showUserInfo={true}
-            enableTilt={true}
-            enableMobileTilt={false}
-            onContactClick={() => console.log("Contact clicked")}
-          />
+          <div className="carousel-item">
+            <InfoCard {...bugBountyData} />
+          </div>
+        </Carousel>
+        <div className="side-by-side">
+          <div
+            className="inner-side-by-side"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "50px",
+            }}
+          ></div>
         </div>
-        <div style={{ height: "600px", position: "relative" }}>
+
+        <div
+          style={{
+            height: "600px",
+            position: "relative",
+            width: "150%",
+          }}
+        >
           <InfiniteMenu items={items} />
+          <WorkTable />
         </div>
         <div style={{ paddingTop: "100px", paddingBottom: "100px" }}>
           {/*<TiltedCard
@@ -394,7 +407,6 @@ const Home = () => {
           </ScrollReveal>
           */}
         </div>
-
         <div
           style={{
             position: "relative",
@@ -404,13 +416,13 @@ const Home = () => {
             width: "100%",
           }}
         >
-          {/*<Ballpit
+          <Ballpit
             count={200}
             gravity={0.7}
             friction={0.8}
             wallBounce={0.95}
             followCursor={true}
-          />*/}
+          />
         </div>
       </div>
     </>

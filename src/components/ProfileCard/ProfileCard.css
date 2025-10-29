@@ -245,7 +245,6 @@
 }
 
 .pc-avatar-content {
-  mix-blend-mode: screen;
   overflow: hidden;
 }
 
@@ -364,7 +363,8 @@
     0.1px
   ) !important;
   z-index: 5;
-  mix-blend-mode: luminosity;
+  mix-blend-mode: multiply;
+
   object-fit: fit;
 }
 
@@ -383,7 +383,7 @@
   margin: 0;
   background-image: linear-gradient(to bottom, #fff, #6f6fbe);
   background-size: 1em 1.5em;
-  -webkit-text-fill-color: #0a2a00;
+  -webkit-text-fill-color: rgb(76, 0, 255);
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -399,7 +399,6 @@
   background-image: linear-gradient(to bottom, #fff, #4a4ac0);
   background-size: 1em 1.5em;
   -webkit-text-fill-color: #0a2a00;
-
   background-clip: text;
   -webkit-background-clip: text;
 }

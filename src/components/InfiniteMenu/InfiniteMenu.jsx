@@ -688,7 +688,7 @@ class InfiniteGridMenu {
   #init(onInit) {
     this.gl = this.canvas.getContext("webgl2", {
       antialias: true,
-      alpha: false,
+      alpha: true /** false to make background black */,
     });
     const gl = this.gl;
     if (!gl) {
@@ -1127,7 +1127,14 @@ export default function InfiniteMenu({ items = [] }) {
   };
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+    <div
+      className="infimenu"
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+      }}
+    >
       <canvas id="infinite-grid-menu-canvas" ref={canvasRef} />
 
       {activeItem && (
