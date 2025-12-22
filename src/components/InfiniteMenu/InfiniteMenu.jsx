@@ -486,7 +486,10 @@ class ArcballControl {
       }
     });
 
-    canvas.style.touchAction = "none";
+    // Only disable touch actions on non-touch devices to allow scrolling on mobile
+    if (!("ontouchstart" in window) && navigator.maxTouchPoints === 0) {
+      canvas.style.touchAction = "none";
+    }
   }
 
   update(deltaTime, targetFrameDuration = 16) {

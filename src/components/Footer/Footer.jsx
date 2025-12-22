@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaGithub,
@@ -7,10 +7,13 @@ import {
   FaInstagram,
   FaPaperPlane,
   FaCode,
+  FaArrowUp,
 } from "react-icons/fa";
 import "./Footer.css";
 
 const Footer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   const socialLinks = [
     {
       icon: <FaGithub />,
@@ -32,8 +35,15 @@ const Footer = () => {
 
   const navLinks = [
     { path: "/", label: "Home" },
-
+    { path: "/about", label: "About" },
+    { path: "/products", label: "Products" },
+    { path: "/gallery", label: "Gallery" },
     { path: "/contact", label: "Contact" },
+  ];
+
+  const legalLinks = [
+    { path: "/privacy-policy", label: "Privacy Policy" },
+    { path: "/terms-of-service", label: "Terms of Service" },
   ];
 
   const handleNewsletterSubmit = (e) => {
@@ -41,6 +51,29 @@ const Footer = () => {
     // Handle newsletter submission logic
     alert("Thank you for subscribing!");
   };
+
+  const toggleVisibility = () => {
+    if (window.pageYOffset > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
 
   return (
     <footer className="footer-reimagined">
@@ -60,6 +93,16 @@ const Footer = () => {
             <h4 className="footer-heading">Explore</h4>
             <ul className="footer-links">
               {navLinks.map((link) => (
+                <li key={link.path}>
+                  <Link to={link.path}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="footer-section links">
+            <h4 className="footer-heading">Legal</h4>
+            <ul className="footer-links">
+              {legalLinks.map((link) => (
                 <li key={link.path}>
                   <Link to={link.path}>{link.label}</Link>
                 </li>
@@ -104,6 +147,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <button 
+        onClick={scrollToTop} 
+        className={`back-to-top ${isVisible ? 'visible' : ''}`} 
+        aria-label="Back to top"
+      >
+        <FaArrowUp />
+      </button>
     </footer>
   );
 };

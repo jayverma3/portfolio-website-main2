@@ -12,9 +12,9 @@
 
 .card-grid {
   display: grid;
-  gap: 0.5em;
-  padding: 0.75em;
-  max-width: 54em;
+  gap: 1vw; /* Responsive gap */
+  padding: 1.5vw; /* Responsive padding */
+  max-width: 90vw; /* Responsive max-width */
   font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
 }
 
@@ -24,7 +24,7 @@
   justify-content: space-between;
   position: relative;
   aspect-ratio: 4/3;
-  min-height: 200px;
+  min-height: 25vh; /* Responsive min-height */
   width: 100%;
   max-width: 100%;
   padding: 1.25em;
@@ -54,6 +54,8 @@
 }
 
 .card__header {
+  font-family: "fraunces", sans-serif;
+
   gap: 0.75em;
   justify-content: space-between;
 }
@@ -63,7 +65,7 @@
 }
 
 .card__label {
-  font-size: 16px;
+  font-size: clamp(0.8rem, 0.7rem + 0.5vw, 1rem);
 }
 
 .card__title,
@@ -73,13 +75,16 @@
 }
 
 .card__title {
+  font-family: "fraunces", sans-serif;
+
   font-weight: 400;
-  font-size: 16px;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
   margin: 0 0 0.25em;
 }
 
 .card__description {
-  font-size: 12px;
+  font-family: "fraunces", sans-serif;
+  font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.9rem);
   line-height: 1.2;
   opacity: 0.9;
 }
@@ -128,7 +133,7 @@
 
   .card {
     width: 100%;
-    min-height: 180px;
+    min-height: 20vh; /* Adjusted to vh for responsiveness */
   }
 }
 

@@ -5,6 +5,36 @@
     "subcategories": [
       {
         "id": "website-1",
+        "title": "Portfolio Showcase",
+        "description": "This portfolio website to showcase my projects and skills. Built with React and designed for a clean and modern look.",
+        "features": [
+          "Interactive UI with animations",
+          "Contact form with email integration",
+          "Showcase of projects with filtering",
+          "Optimized for performance"
+        ],
+        "imageUrls": ["src/assets/portfolio_original.png"],
+        "projectLink": "https://jayverma3.github.io/portfolio-website-main/"
+      },
+      {
+        "id": "website-2",
+        "title": "Corporate Landing Page",
+        "description": "A sleek and professional landing page for a corporate client. Focused on brand identity and lead generation.",
+        "features": [
+          "SEO-friendly structure",
+          "Fast load times",
+          "Integration with CRM",
+          "A/B testing for conversion optimization"
+        ],
+        "imageUrls": [
+          "src/assets/hackerimg.webp",
+          "src/assets/whiteblock.png",
+          "src/assets/blueriver2.jpg"
+        ],
+        "projectLink": "#"
+      },
+      {
+        "id": "website-3",
         "title": "Services for Home Cleaning",
         "description": "Developed a full-stack e-commerce platform with a custom CMS and payment gateway integration.",
         "features": [
@@ -23,33 +53,24 @@
         ],
         "projectLink": "#"
       },
-      {
-        "id": "website-2",
-        "title": "Portfolio Showcase",
-        "description": "A personal portfolio website to showcase my projects and skills. Built with React and designed for a clean and modern look.",
-        "features": [
-          "Interactive UI with animations",
-          "Contact form with email integration",
-          "Showcase of projects with filtering",
-          "Optimized for performance"
-        ],
-        "imageUrls": ["src/assets/img1.jpg"],
-        "projectLink": "#"
-      },
+
       {
         "id": "website-3",
-        "title": "Corporate Landing Page",
-        "description": "A sleek and professional landing page for a corporate client. Focused on brand identity and lead generation.",
+        "title": "Real Estate Website",
+        "description": "A comprehensive real estate listing website with advanced search and filtering options. Integrated with a third-party API for real-time property data.",
         "features": [
-          "SEO-friendly structure",
-          "Fast load times",
-          "Integration with CRM",
-          "A/B testing for conversion optimization"
+          "PHP backend with MySQL database",
+          "React + Vite frontend",
+          "Chatbot feature for customer inquiries",
+          "Responsive design for mobile and desktop",
+          "Map integration for property locations"
         ],
         "imageUrls": [
-          "src/assets/hackerimg.webp",
-          "src/assets/whiteblock.png",
-          "src/assets/blueriver2.jpg"
+          "src/assets/website-work/g1realtywebsite_work/Info.png",
+          "src/assets/website-work/g1realtywebsite_work/About.png",
+          "src/assets/website-work/g1realtywebsite_work/Search.png",
+          "src/assets/website-work/g1realtywebsite_work/Listing.png",
+          "src/assets/website-work/g1realtywebsite_work/Agents.png"
         ],
         "projectLink": "#"
       }
@@ -65,14 +86,14 @@
         "description": "Designed and implemented an inventory management module for a larger ERP system. It tracks stock levels, orders, and deliveries.",
         "features": [
           "Real-time stock tracking",
-          "Automated reorder alerts",
+          "Automated alerts",
           "Barcode scanner integration",
           "Reporting and analytics"
         ],
         "imageUrls": [
-          "src/assets/hackerimg.webp",
-          "src/assets/whiteblock.png",
-          "src/assets/blueriver2.jpg"
+          "src/assets/main2.png",
+          "src/assets/chart-1905225_1280.jpg",
+          "src/assets/creative-delivery-concept_23-2147713639.avif"
         ],
         "projectLink": "#"
       },
@@ -87,9 +108,9 @@
           "Role-based access control"
         ],
         "imageUrls": [
-          "src/assets/img1.jpg",
-          "src/assets/gptimages/hoodie_shop.webp",
-          "src/assets/hackerimg.webp"
+          "src/assets/human-resource-bg-left-min.png",
+          "src/assets/hr.jpg",
+          "src/assets/Steps-for-human-resource-management-strategies.png"
         ],
         "projectLink": "#"
       }
@@ -109,8 +130,38 @@
           "Due date reminders and notifications",
           "Cross-platform synchronization"
         ],
-        "imageUrls": ["src/assets/whiteblock.png"],
+        "imageUrls": ["src/assets/manager.jpg"],
         "projectLink": "#"
+      }
+    ]
+  },
+  {
+    "category": "GitHub",
+    "icon": "personal-icon.svg",
+    "subcategories": [
+      {
+        "id": "github-1",
+        "title": "Open Source Contribution",
+        "description": "Contributed to various open-source projects on GitHub, focusing on bug fixes and feature enhancements.",
+        "features": [
+          "Fixed bugs in popular libraries",
+          "Implemented new features based on user feedback",
+          "Collaborated with other developers through pull requests"
+        ],
+        "imageUrls": ["src/assets/github.png"],
+        "projectLink": "https://github.com/jayverma3"
+      },
+      {
+        "id": "github-2",
+        "title": "Organization",
+        "description": "Contributed ",
+        "features": [
+          "Organization for multiple repositories",
+          "Implemented new features based on user feedback",
+          "Collaborated with other developers"
+        ],
+        "imageUrls": ["src/assets/organization.png"],
+        "projectLink": "https://github.com/Solo-Leveling-by-jayverma"
       }
     ]
   }
